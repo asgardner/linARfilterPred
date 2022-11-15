@@ -847,11 +847,11 @@ imageID LINARFILTERPRED_Build_LinPredictor(const char *IDin_name,
     //imageID IDout;
     imageID IDinmask;
     imageID IDoutmask;
-    long    nbspl; // Number of samples
+    long    nbspl = 0L; // Number of samples
     long    NBpixin, NBpixout;
     long    NBmvec, NBmvec1;
     long    mvecsize;
-    long    xsize, ysize;
+    long    xsize = 0L, ysize = 0L;
     long   *pixarray_x;
     long   *pixarray_y;
     long   *pixarray_xy;
@@ -917,7 +917,7 @@ imageID LINARFILTERPRED_Build_LinPredictor(const char *IDin_name,
 
     uint32_t *imsize;
     long      IDincp;
-    long      inNBelem;
+    long      inNBelem = 0L;;
 
     list_variable_ID();
 
@@ -1831,8 +1831,8 @@ imageID LINARFILTERPRED_Apply_LinPredictor(const char *IDfilt_name,
     imageID  IDout;
     imageID  IDin;
     imageID  IDfilt;
-    uint32_t xsize;
-    uint32_t ysize;
+    uint32_t xsize = 0;
+    uint32_t ysize = 0;
     uint64_t xysize;
 
     long  nbspl;
@@ -2060,10 +2060,10 @@ imageID LINARFILTERPRED_PF_RealTimeApply(const char *IDmodevalIN_name,
     float tlagalpha = 0.0;
 
     imageID IDoutmask;
-    long   *outmaskindex;
+    long   *outmaskindex = NULL;
     long    NBoutmaskpix;
     long    kk0, kk1;
-    float   val, val0, val1;
+    float   val = 0.0f, val0 = 0.0f, val1 = 0.0f;
     long    ii0, ii1;
 
     long IDmasterout;

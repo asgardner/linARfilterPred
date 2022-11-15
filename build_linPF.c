@@ -11,7 +11,7 @@
 #include "CommandLineInterface/CLIcore.h"
 #include "CommandLineInterface/timeutils.h"
 #include "COREMOD_iofits/COREMOD_iofits.h"
-
+#include "linopt_imtools/compute_SVDpseudoInverse.h"
 
 #ifdef HAVE_CUDA
 #include "cudacomp/cudacomp.h"
@@ -619,7 +619,7 @@ static errno_t compute_function()
     /// Otherwise, call function linopt_compute_SVDpseudoInverse()\n
 
     long NB_SVD_Modes = 10000;
-    int  LOOPmode     = 0; // 1 if re-use arrays
+    // int  LOOPmode     = 0; // 1 if re-use arrays
 
 #ifdef HAVE_MAGMA
     printf("Using magma ...\n");
